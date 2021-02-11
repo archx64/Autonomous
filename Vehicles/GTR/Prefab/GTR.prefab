@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3568837686198509044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7999999, y: 0.35, z: -1.3499995}
+  m_LocalPosition: {x: -0.7999999, y: 0.37, z: -1.3499995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821832261218625770}
@@ -55,13 +55,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!82 &4266875347169192496
 AudioSource:
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3573488953977626868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6999999, y: 0.36, z: 1.4249998}
+  m_LocalPosition: {x: -0.6999999, y: 0.38, z: 1.4249998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821832261218625770}
@@ -228,13 +228,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!82 &3169571666075714165
 AudioSource:
@@ -5067,7 +5067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7430354556760202081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7999999, y: 0.35, z: -1.3499995}
+  m_LocalPosition: {x: 0.7999999, y: 0.37, z: -1.3499995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821832261218625770}
@@ -5095,13 +5095,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!82 &1551433207544271202
 AudioSource:
@@ -5260,6 +5260,8 @@ GameObject:
   - component: {fileID: 4597240291302180002}
   - component: {fileID: 1356893706045398363}
   - component: {fileID: 4969567268613055861}
+  - component: {fileID: 7480168454943525960}
+  - component: {fileID: 3264324655604855388}
   m_Layer: 0
   m_Name: GTR
   m_TagString: Untagged
@@ -5299,7 +5301,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &6024305016782254385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5333,19 +5335,19 @@ MonoBehaviour:
   - {fileID: 8477456391577147643}
   - {fileID: 4424776443824475122}
   - {fileID: 5177961233711768713}
-  m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
+  m_CentreOfMassOffset: {x: 0, y: 0.5, z: 0}
   m_MaximumSteerAngle: 0
-  m_SteerHelper: 0
-  m_TractionControl: 0
-  m_FullTorqueOverAllWheels: 800
+  m_StabilityControl: 0
+  m_TractionControl: 0.5
+  m_FullTorqueOverAllWheels: 500
   m_ReverseTorque: 150
   m_MaxHandbrakeTorque: 150
-  m_Downforce: 10
+  m_Downforce: 100
   m_SpeedType: 1
   m_Topspeed: 340
   m_RevRangeBoundary: 1
-  m_SlipLimit: 1
-  m_BrakeTorque: 0
+  m_SlipLimit: 0.4
+  m_BrakeTorque: 1000
 --- !u!114 &7998112032778704568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5402,10 +5404,10 @@ MonoBehaviour:
     VectorActionSpaceType: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: My Behavior
   TeamId: 0
-  m_UseChildSensors: 1
+  m_UseChildSensors: 0
 --- !u!114 &1356893706045398363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5436,6 +5438,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
+--- !u!114 &7480168454943525960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018370020926790362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: WallAndTraffic
+  m_DetectableTags:
+  - Wall
+  - Traffic
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 70
+  m_SphereCastRadius: 0.1
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 0, g: 1, b: 0, a: 1}
+  m_StartVerticalOffset: 0.5
+  m_EndVerticalOffset: 0.5
+--- !u!114 &3264324655604855388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018370020926790362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: Goal
+  m_DetectableTags:
+  - Goal
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 10
+  m_SphereCastRadius: 0.1
+  m_RayLength: 30
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 1, b: 0, a: 1}
+  rayMissColor: {r: 0, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0.5
+  m_EndVerticalOffset: 0.5
 --- !u!1 &8871208202802351638
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,7 +5520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8871208202802351638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6999999, y: 0.36, z: 1.4249998}
+  m_LocalPosition: {x: 0.6999999, y: 0.38, z: 1.4249998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821832261218625770}
@@ -5491,13 +5548,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.8
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!82 &3995519715531934002
 AudioSource:
@@ -5671,6 +5728,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4373901884503714638, guid: 1b60594eaf0dfd94296d3a053798c260,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b60594eaf0dfd94296d3a053798c260,
         type: 3}
       propertyPath: m_Name
@@ -5678,6 +5740,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b60594eaf0dfd94296d3a053798c260, type: 3}
+--- !u!1 &1649109234959846785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2290042212535788795, guid: 1b60594eaf0dfd94296d3a053798c260,
+    type: 3}
+  m_PrefabInstance: {fileID: 8564424414848784004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767314285698895503 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1271087824653723637, guid: 1b60594eaf0dfd94296d3a053798c260,
@@ -5708,9 +5776,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8564424414848784004}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1649109234959846785 stripped
+--- !u!1 &5621858571600539372 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -2290042212535788795, guid: 1b60594eaf0dfd94296d3a053798c260,
+  m_CorrespondingSourceObject: {fileID: 4097756918129539176, guid: 1b60594eaf0dfd94296d3a053798c260,
     type: 3}
   m_PrefabInstance: {fileID: 8564424414848784004}
   m_PrefabAsset: {fileID: 0}
@@ -5729,12 +5797,6 @@ GameObject:
 --- !u!1 &531890109535961938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8195238081990874582, guid: 1b60594eaf0dfd94296d3a053798c260,
-    type: 3}
-  m_PrefabInstance: {fileID: 8564424414848784004}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5621858571600539372 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4097756918129539176, guid: 1b60594eaf0dfd94296d3a053798c260,
     type: 3}
   m_PrefabInstance: {fileID: 8564424414848784004}
   m_PrefabAsset: {fileID: 0}

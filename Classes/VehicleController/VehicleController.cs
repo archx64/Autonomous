@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 internal enum CarDriveType
 {
@@ -23,9 +22,9 @@ public class VehicleController : MonoBehaviour
     [SerializeField] private WheelEffects[] m_WheelEffects = new WheelEffects[4];
     [SerializeField] private Vector3 m_CentreOfMassOffset;
     [SerializeField] private float m_MaximumSteerAngle;
-    [Range(0, 1)] [SerializeField] private float m_SteerHelper; // 0 is raw physics , 1 the car will grip in the direction it is facing
+    [Range(0, 1)] [SerializeField] private float m_StabilityControl; // 0 is raw physics , 1 the car will grip in the direction it is facing
     [Range(0, 1)] [SerializeField] private float m_TractionControl; // 0 is no traction control, 1 is full interference
-    [SerializeField] private float m_FullTorqueOverAllWheels;
+    [SerializeField] private float m_FullTorqueOverSelectedWheels;
     [SerializeField] private float m_ReverseTorque;
     [SerializeField] private float m_MaxHandbrakeTorque;
     [SerializeField] private float m_Downforce = 100f;
@@ -44,8 +43,6 @@ public class VehicleController : MonoBehaviour
     private float m_OldRotation;
     private float m_CurrentTorque;
     private Rigidbody m_Rigidbody;
-    private const float k_ReversingThreshold = 0.01f;
-
     private readonly SteeringController steeringController = new SteeringController();
 
     private float wheelBase;
@@ -75,43 +72,12 @@ public class VehicleController : MonoBehaviour
         m_MaxHandbrakeTorque = float.MaxValue;
 
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl * m_FullTorqueOverAllWheels);
+        m_CurrentTorque = m_FullTorqueOverSelectedWheels - (m_TractionControl * m_FullTorqueOverSelectedWheels);
 
         wheelBase = Vector3.Distance(m_WheelColliders[0].transform.position, m_WheelColliders[2].transform.position);
         rearTrack = Vector3.Distance(m_WheelColliders[2].transform.position, m_WheelColliders[3].transform.position);
     }
 
-    private void Update()
-    {
-        CheckWin();
-    }
-
-    private void CheckWin()
-    {
-        m_WheelColliders[0].GetGroundHit(out WheelHit hitLF);
-        m_WheelColliders[1].GetGroundHit(out WheelHit hitRF);
-        m_WheelColliders[2].GetGroundHit(out WheelHit hitLR);
-        m_WheelColliders[3].GetGroundHit(out WheelHit hitRR);
-
-        if (hitLF.collider == null)
-        {
-            return;
-        }
-
-        if (hitLF.collider.gameObject.name == "Area" &&
-            hitRF.collider.gameObject.name == "Area" &&
-            hitLR.collider.gameObject.name == "Area" &&
-            hitRR.collider.gameObject.name == "Area" &&
-            globalHandbrake > 0.9f)
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
-
-    private void CheckLane()
-    {
-
-    }
 
     private void GearChanging()
     {
@@ -194,8 +160,8 @@ public class VehicleController : MonoBehaviour
         //Assuming that wheels 0 and 1 are the front wheels.
         m_SteerAngle = steering * m_MaximumSteerAngle;
         float[] ackermanSteer = steeringController.SetSteer(steering, wheelBase, 5, rearTrack);
-        m_WheelColliders[0].steerAngle = ackermanSteer[1];
-        m_WheelColliders[1].steerAngle = ackermanSteer[0];
+        m_WheelColliders[0].steerAngle = Mathf.Lerp(m_WheelColliders[0].steerAngle, ackermanSteer[1], Time.deltaTime * 5);
+        m_WheelColliders[1].steerAngle = Mathf.Lerp(m_WheelColliders[1].steerAngle, ackermanSteer[0], Time.deltaTime * 5);
 
         SteerHelper();
         ApplyDrive(accel, footbrake);
@@ -295,7 +261,7 @@ public class VehicleController : MonoBehaviour
         // this if is needed to avoid gimbal lock problems that will make the car suddenly shift direction
         if (Mathf.Abs(m_OldRotation - transform.eulerAngles.y) < 10f)
         {
-            var turnadjust = (transform.eulerAngles.y - m_OldRotation) * m_SteerHelper;
+            var turnadjust = (transform.eulerAngles.y - m_OldRotation) * m_StabilityControl;
             Quaternion velRotation = Quaternion.AngleAxis(turnadjust, Vector3.up);
             m_Rigidbody.velocity = velRotation * m_Rigidbody.velocity;
         }
@@ -396,9 +362,9 @@ public class VehicleController : MonoBehaviour
         else
         {
             m_CurrentTorque += 10 * m_TractionControl;
-            if (m_CurrentTorque > m_FullTorqueOverAllWheels)
+            if (m_CurrentTorque > m_FullTorqueOverSelectedWheels)
             {
-                m_CurrentTorque = m_FullTorqueOverAllWheels;
+                m_CurrentTorque = m_FullTorqueOverSelectedWheels;
             }
         }
     }

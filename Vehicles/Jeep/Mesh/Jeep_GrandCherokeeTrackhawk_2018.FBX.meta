@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 6977444d062e028449791440cd76d9b1
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Badge.001
+    second: {fileID: 2100000, guid: 971c597f9ab513e45ab97e4012baaeed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Base.001
+    second: {fileID: 2100000, guid: caee3d012eba1434d8917290b2cb87bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_CalliperBadge.001
+    second: {fileID: 2100000, guid: fa8c3575c8e2e4e4382479c02cbeaef9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Calliper_Color.001
+    second: {fileID: 2100000, guid: 57007b869d2e14945904c87438c8a4e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Calliper_Textured.001
+    second: {fileID: 2100000, guid: 0dac17f8cea32974bac9ef5043c57aa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_CarPaint.001
+    second: {fileID: 2100000, guid: 597bd0f4b88858e49969ed90041d71e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Coloured.001
+    second: {fileID: 2100000, guid: acee7c868a0a9b843aafc9efbc6adac6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Engine.001
+    second: {fileID: 2100000, guid: 27b91bb33d5fee34090651689b03128b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_EngineA.001
+    second: {fileID: 2100000, guid: bb9f2a2846e7ee146bac4577577975e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille1.001
+    second: {fileID: 2100000, guid: 0107c87b25858684c8796ed0f28a340a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille2.001
+    second: {fileID: 2100000, guid: 52d57c7de8ceb354c8b45a4d582c9653, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille3.001
+    second: {fileID: 2100000, guid: e7ddf6d4ee4968a4fb624e342ab3f911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille4.001
+    second: {fileID: 2100000, guid: 64a868c39d3180348bf546e3cabba60a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille6.001
+    second: {fileID: 2100000, guid: f6e0f96b2e6ed2343ace2651f8675d52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Grille7.001
+    second: {fileID: 2100000, guid: e123c4edb6ced1c45b98bacb15f788f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Interior.001
+    second: {fileID: 2100000, guid: 09051f2636bf7e84ab0538973444597c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_InteriorA.001
+    second: {fileID: 2100000, guid: 0b747afb5407c9f4eb8881156c47ae44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_InteriorA_Zone2.001
+    second: {fileID: 2100000, guid: e78c6e877d438ae498fb54baf44460de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_InteriorTilling.001
+    second: {fileID: 2100000, guid: 98a1467bdc0563b4d8d33a1359ca1e86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_InteriorTillingColourZone.001
+    second: {fileID: 2100000, guid: 22cf784d67c508b4da23b0ad61d4e2d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Interior_Zone2.001
+    second: {fileID: 2100000, guid: 11c9aa510af98824ea3a7cc5d4fc5193, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Light.001
+    second: {fileID: 2100000, guid: c6a4aefd8c6a9654283462b07de5f77d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Wheel2A_Rim.001
+    second: {fileID: 2100000, guid: 38affe1dd74b7b247acd25027c99e019, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Wheel2A_Rotor.001
+    second: {fileID: 2100000, guid: c258b18f5af177a4cb0494de9a0527f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CSR2_Wheel2A_Tire.001
+    second: {fileID: 2100000, guid: 0c16e354d58ac434198d56c1fb940271, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassClear.001
+    second: {fileID: 2100000, guid: b6a5b42fd9ca8e540aabaa1ef558dd40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassRed.001
+    second: {fileID: 2100000, guid: 3382f6f5f8339bc489e6fc6e0fd18d3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window.001
+    second: {fileID: 2100000, guid: 7f464a20a2f64864bb59ee84b77e3594, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowDark.001
+    second: {fileID: 2100000, guid: a13a1227c28155d4facbb23b28dc4316, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
